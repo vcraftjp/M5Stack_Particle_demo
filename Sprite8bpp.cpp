@@ -81,7 +81,8 @@ void Sprite8bpp::flush(uint16_t *palette) {
 	startWrite();
 	inTransaction = true;
 
-	setAddrWindow(x, y, x + w - 1, y + h - 1);
+	// setAddrWindow(x, y, x + w - 1, y + h - 1);
+	setWindow(x, y, x + w - 1, y + h - 1);
 	uint16_t lineBuf[w];
 	uint8_t *data = _img8 + x + y * w;
 
